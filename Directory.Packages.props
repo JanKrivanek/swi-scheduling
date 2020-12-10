@@ -1,0 +1,112 @@
+<Project>
+
+  <PropertyGroup>
+    <FoundationNetVersion>1.7.5</FoundationNetVersion>
+	<!--<FoundationNetVersion>1.6.18</FoundationNetVersion>-->
+    <SpecFlowVersion>3.3.57</SpecFlowVersion>
+    <UamsClientPluginsVersion>1.2.0</UamsClientPluginsVersion>
+    <UamsApiPublicVersion>1.3.0</UamsApiPublicVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="AppOptics.Instrumentation" Version="4.0.1" />
+    <PackageVersion Include="Castle.Core" Version="4.4.1" />
+    <PackageVersion Include="Castle.Windsor" Version="5.1.0-beta001" />
+    <PackageVersion Include="Castle.Windsor.Extensions.DependencyInjection" Version="5.1.0-beta001" />
+    <PackageVersion Include="coverlet.collector" Version="1.2.0" />
+    <PackageVersion Include="FluentAssertions" Version="5.10.3" />
+    <PackageVersion Include="GenericParsing" Version="1.2.2" />
+    <PackageVersion Include="Google.Protobuf" Version="3.13.0" />
+    <PackageVersion Include="Grpc.AspNetCore" Version="2.31.0" />
+    <PackageVersion Include="Grpc.Net.Client" Version="2.31.0" />
+    <PackageVersion Include="Grpc.Tools" Version="2.31.0" />
+    <PackageVersion Include="Grpc.Core.Api" Version="2.31.0" />
+    <PackageVersion Include="Kettie" Version="0.12.0" />
+    <PackageVersion Include="Kettie.NUnit" Version="0.12.0" />
+    <PackageVersion Include="Kettie.SpecFlow.SpecFlowPlugin" Version="0.12.0" />
+	<PackageVersion Include="Microsoft.Extensions.Caching.Memory" Version="3.1.7" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration" Version="3.1.7" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.CommandLine" Version="3.1.7" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.1.7" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="3.1.7" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="3.1.7" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="3.1.7" />
+    <PackageVersion Include="Microsoft.Extensions.Logging" Version="3.1.7" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.7" />
+    <PackageVersion Include="Microsoft.Management.Infrastructure" Version="2.0.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageVersion Include="Moq" Version="4.13.1" />
+    <PackageVersion Include="AutoFixture" Version="4.14.0" />
+    <PackageVersion Include="AutoFixture.AutoMoq" Version="4.14.0" />
+    <PackageVersion Include="nunit" Version="3.12" />
+    <PackageVersion Include="NUnit3TestAdapter" Version="3.16.1" />
+    <PackageVersion Include="Serilog.AspNetCore" Version="3.4.0" />
+    <PackageVersion Include="Serilog.Enrichers.Thread" Version="3.1.0" />
+    <PackageVersion Include="Serilog.Settings.Configuration" Version="3.1.0" />
+    <PackageVersion Include="Serilog.Extensions.Hosting" Version="3.1.0" />
+    <PackageVersion Include="Serilog.Sinks.Async" Version="1.4.0" /><!-- todo: verify, if we really need all of those packages -->
+    <PackageVersion Include="Serilog.Sinks.ColoredConsole" Version="3.0.1" />
+    <PackageVersion Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageVersion Include="Serilog.Sinks.Debug" Version="1.0.1" />
+    <PackageVersion Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
+    <PackageVersion Include="SharpZipLib" Version="1.2.0" />
+    <PackageVersion Include="SolarWinds.TenantAffinity" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.TenantAffinity.Abstractions" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.ApiProxyFactory" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.ActivityContext" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.ActivityContext.Abstractions" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.ActivityContext.AspNet" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.SlingAuth.Client.AspNet" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.Core" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.CredentialManager" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.Database.Client" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.Database.Client.Abstractions" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.Database.Client.TestSetup" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.Database.Entities" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.Database.Entities.Schema" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.Database.TimeSeries.Chainsaw" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.Database.TimeSeries.Contracts" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.Identifiers" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.Identifiers.Contract" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.Identifiers.TestSetup" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.MessageBus.Sqs" Version="1.0.0.204" />
+    <PackageVersion Include="SolarWinds.Messaging.Utils" Version="1.0.0.204" />
+    <PackageVersion Include="SolarWinds.MessageBus.Kafka" Version="1.0.0.204" />
+    <PackageVersion Include="SolarWinds.Obsolete" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.PubSub.Client.Abstractions" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.Serilog.Enrichers.ActivityContext" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.Serilog.Enrichers.AppOptics" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.Serilog.Formatters" Version="$(FoundationNetVersion)" />
+	
+	<PackageVersion Include="SolarWinds.SlingAuth.Client.Abstractions" Version="$(FoundationNetVersion)" />
+	<PackageVersion Include="SolarWinds.SlingAuth.Client" Version="$(FoundationNetVersion)" />
+	<PackageVersion Include="SolarWinds.SlingAuth.Client.GrpcCore" Version="$(FoundationNetVersion)" />
+	
+    <PackageVersion Include="SolarWinds.Swicus.Client" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.Swinx.Client" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.Tracing.Abstractions" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.TenantAffinity.Abstractions" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.TenantAffinity" Version="$(FoundationNetVersion)" />
+    <PackageVersion Include="SolarWinds.UamsClient.Plugins" Version="$(UamsClientPluginsVersion)" />
+    <PackageVersion Include="SolarWinds.Uams.Api.Public" Version="$(UamsApiPublicVersion)" />
+    <PackageVersion Include="SolarWinds.UniversalMessageFormat" Version="1.0.0.93" />
+    <PackageVersion Include="SpecFlow" Version="$(SpecFlowVersion)" />
+    <PackageVersion Include="SpecFlow.NUnit" Version="$(SpecFlowVersion)" />
+    <PackageVersion Include="SpecFlow.Tools.MsBuild.Generation" Version="$(SpecFlowVersion)" />
+    <PackageVersion Include="System.ComponentModel.Composition" Version="4.7.0" />
+    <PackageVersion Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
+    <PackageVersion Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageVersion Include="System.Data.SqlClient" Version="4.8.1" />
+    <PackageVersion Include="System.Data.SQLite" Version="1.0.112.2" />
+    <PackageVersion Include="System.Linq.Dynamic.Core" Version="1.1.1" />
+    <PackageVersion Include="System.Management" Version="4.7.0" />
+    <PackageVersion Include="System.Reactive" Version="4.4.1" />
+    <PackageVersion Include="System.Reflection.Emit" Version="4.7.0" />
+    <PackageVersion Include="System.Runtime.Caching" Version="4.7.0" />
+    <PackageVersion Include="System.Security.Cryptography.Xml" Version="4.7.0" />
+    <PackageVersion Include="xunit" Version="2.4.0" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.0" />
+    <PackageVersion Include="System.CommandLine.DragonFruit" Version="0.3.0-alpha.20371.2" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+	<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="SolarWinds.ActivityContext" />
+	<PackageReference Include="SolarWinds.TenantAffinity.Abstractions" />
+	<PackageReference Include="SolarWinds.TenantAffinity" />
+	<PackageReference Include="SolarWinds.SlingAuth.Client.Abstractions" />
+	<PackageReference Include="SolarWinds.SlingAuth.Client" />
+	<PackageReference Include="SolarWinds.SlingAuth.Client.AspNet" />
+	<!-- <PackageReference Include="SolarWinds.SlingAuth.Client.GrpcCore" />-->
+	
+	<PackageReference Include="Microsoft.Extensions.Configuration" />
+	<PackageReference Include="Microsoft.Extensions.Configuration.Json" />
+	<PackageReference Include="Microsoft.Extensions.Caching.Memory" />
+	
+	<PackageReference Include="SolarWinds.Swicus.Client" />
+	<PackageReference Include="SolarWinds.Swinx.Client" />
+	
+	
+	
+	
+
+	<PackageReference Include="SolarWinds.MessageBus.Sqs" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\TenantHelper\TenantHelper.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

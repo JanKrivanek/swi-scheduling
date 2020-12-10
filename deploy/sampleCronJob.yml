@@ -1,0 +1,30 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: scheduler-per-tenant-example
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      parallelism: 1
+      template:
+        spec:
+          initContainers:
+          # We can have init phase e.g. validating the availability of SWICUS etc.
+          - name: pre-phase1
+            image: busybox
+            imagePullPolicy: IfNotPresent
+            args:
+            - /bin/sh
+            - -c
+            - for i in 1 2 3; do echo "pre-phase1 `date`" && sleep 5s; done;               
+          containers:
+          - name: scheduled-work-inserter
+            image: busybox
+            imagePullPolicy: IfNotPresent
+            args:
+            - /bin/sh
+            - -c
+            - date; echo Hello from the Kubernetes cluster
+          restartPolicy: OnFailure
+  concurrencyPolicy: Forbid
