@@ -30,7 +30,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\..\TenantHelper\TenantHelper.csproj" />
+    <ProjectReference Include="..\TenantHelper\TenantHelper.csproj" />
   </ItemGroup>
   
   <ItemGroup>
