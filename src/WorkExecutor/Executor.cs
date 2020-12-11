@@ -33,7 +33,7 @@ namespace WorkExecutor
 
         private async Task<bool> RunAsTenantInternal(CancellationToken cancellationToken)
         {
-            Console.WriteLine("Current tenant Id from ambient context: {0}",
+            Logger.LogInformation("Current tenant Id from ambient context: {TenantId}",
                 AuthenticationContext.Current.Slingshot.TenantId);
 
             return true;

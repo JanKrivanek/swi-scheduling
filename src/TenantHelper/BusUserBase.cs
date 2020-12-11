@@ -25,6 +25,8 @@ namespace TenantHelper
 
         protected string Topic => settings.QueueName;
 
+        protected ILogger Logger => logger;
+
         protected abstract void OnStart(IMessageBus messageBus);
 
         public void Start()
