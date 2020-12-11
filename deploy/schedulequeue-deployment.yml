@@ -20,3 +20,8 @@ spec:
         - name: alpine-sqs
           image: roribio16/alpine-sqs
           imagePullPolicy: Never
+          envFrom:
+            - configMapRef:
+                name: scheduler-config
+          ports:
+          - containerPort: 9324

@@ -42,7 +42,8 @@ namespace WorkExecutor
 
             var builder = new ConfigurationBuilder()
                 //.SetBasePath("path here") //<--You would need to set the path
-                .AddJsonFile("appsettings.json"); //or what ever file you have the settings
+                .AddJsonFile("appsettings.json") //or what ever file you have the settings
+                .AddEnvironmentVariables();
             ;
 
             IConfiguration configuration = builder.Build();
@@ -57,7 +58,10 @@ namespace WorkExecutor
             serviceCollection.ConfigureSwicusClient();
             serviceCollection.AddSlingAuth();
             serviceCollection.AddTenantAffinity();
-            serviceCollection.AddScoped<SchedulerQueueSettings>(_ => SchedulerQueueSettings.DefaultSettingsForElasticMQ);
+
+            //I'm lazy to make this working - just binding to instance directly below
+            //serviceCollection.Configure<SchedulerQueueSettings>(o => configuration.GetSection("SchedulerQueueSettings").Bind(o));
+            serviceCollection.AddScoped<SchedulerQueueSettings>(_ => configuration.GetSection("SchedulerQueueSettings").Get<SchedulerQueueSettings>());
             serviceCollection.AddScoped<ITenantHelper, TenantHelper.TenantHelper>();
             serviceCollection.AddScoped<Executor>();
 

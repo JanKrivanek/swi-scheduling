@@ -1,0 +1,13 @@
+{
+    "profiles": {
+        "WorkExecutor": {
+            "commandName": "Project",
+          "environmentVariables": {
+            "SchedulerQueueSettings__QueueServiceUri": "http://localhost:9324",
+            "SchedulerQueueSettings__QueueServiceAccessKey": "x",
+            "SchedulerQueueSettings__QueueServiceSecretKey": "x",
+            "SchedulerQueueSettings__QueueName": "default"
+          }
+        }
+    }
+}

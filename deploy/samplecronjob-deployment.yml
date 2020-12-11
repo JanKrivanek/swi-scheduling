@@ -32,5 +32,19 @@ spec:
           - name: scheduled-work-inserter
             image: scheduler_inserter:dev
             imagePullPolicy: Never
+            
+            envFrom:
+             - configMapRef:
+                name: scheduler-config
+            env:
+                - name: SchedulerQueueSettings__QueueServiceUri
+                  value: "http://$(QUEUE_HOST):$(QUEUE_PORT)"
+                - name: SchedulerQueueSettings__QueueServiceAccessKey
+                  value: "x"
+                - name: SchedulerQueueSettings__QueueServiceSecretKey
+                  value: "x"
+                - name: SchedulerQueueSettings__QueueName
+                  value: "default"
+            
           restartPolicy: OnFailure
   concurrencyPolicy: Forbid

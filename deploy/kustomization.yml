@@ -10,3 +10,12 @@ resources:
 
 #patchesStrategicMerge:
 #no patches - just local sample deployment
+
+
+configMapGenerator:
+
+  - behavior: create
+    name: scheduler-config
+    literals:
+      - QUEUE_PORT="9324" 
+      - QUEUE_HOST="alpine-sqs"
