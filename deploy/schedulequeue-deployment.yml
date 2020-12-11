@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: schedule-queue
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - name: alpine-sqs
+          image: roribio16/alpine-sqs
+          imagePullPolicy: Never

@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+
+    #to run multiple instances: docker-compose up --scale cache_consumer=3
+    #build:
+    #    depends_on:
+    #      - build_executor
+    #      - build_inserter
+           
+        
+    # Build process docker image
+    scheduler_executor:
+        container_name: scheduler_executor
+        image: scheduler_executor:dev
+        build:
+            context: .
+            dockerfile: build/WorkExecutor/Dockerfile
+            
+    scheduler_inserter:
+        container_name: scheduler_inserter
+        image: scheduler_inserter:dev
+        build:
+            context: .
+            dockerfile: build/WorkInserter/Dockerfile
+
+
+
+

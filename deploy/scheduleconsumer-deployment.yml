@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: schedule-consumer
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - name: scheduler_inserter
+          image: scheduler_inserter:dev
+          imagePullPolicy: Never

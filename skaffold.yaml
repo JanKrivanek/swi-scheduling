@@ -1,0 +1,20 @@
+apiVersion: skaffold/v2alpha4
+kind: Config
+metadata:
+  name: scheduler
+build:
+  local:
+    useDockerCLI: false
+    useBuildkit: false
+    push: false
+profiles:
+  - name: local
+    build:
+      local:
+        push: false
+    deploy:
+      kustomize:
+        paths:
+          - deploy
+    activation:
+      - kubeContext: docker-desktop

@@ -11,6 +11,8 @@ spec:
         spec:
           initContainers:
           # We can have init phase e.g. validating the availability of SWICUS etc.
+          # this init phase is *just a dummy saple*
+          # hence TO BE REMOVED
           - name: pre-phase1
             image: busybox
             imagePullPolicy: IfNotPresent
@@ -18,13 +20,10 @@ spec:
             - /bin/sh
             - -c
             - for i in 1 2 3; do echo "pre-phase1 `date`" && sleep 5s; done;               
+          # The image for container producing the workitems (tenant ids)
           containers:
           - name: scheduled-work-inserter
-            image: busybox
-            imagePullPolicy: IfNotPresent
-            args:
-            - /bin/sh
-            - -c
-            - date; echo Hello from the Kubernetes cluster
+            image: scheduler_inserter:dev
+            imagePullPolicy: Never
           restartPolicy: OnFailure
   concurrencyPolicy: Forbid
