@@ -4,9 +4,19 @@ metadata:
   name: schedule-consumer
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: schedule-consumer
   template:
+    metadata:
+      labels:
+        app: schedule-consumer
+        app.kubernetes.io/managed-by: kustomize
+        app.kubernetes.io/part-of: slingshot-scheduling-sample
+        app.kubernetes.io/component: consumer
+        app.kubernetes.io/name: schedule-consumer-sample
     spec:
       containers:
-        - name: scheduler_inserter
-          image: scheduler_inserter:dev
+        - name: scheduler-executor
+          image: scheduler_executor:dev
           imagePullPolicy: Never

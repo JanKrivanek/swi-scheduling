@@ -4,7 +4,17 @@ metadata:
   name: schedule-queue
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: schedule-queue
   template:
+    metadata:
+      labels:
+        app: schedule-queue
+        app.kubernetes.io/managed-by: kustomize
+        app.kubernetes.io/part-of: slingshot-scheduling-sample
+        app.kubernetes.io/component: queue
+        app.kubernetes.io/name: schedule-queue-sample
     spec:
       containers:
         - name: alpine-sqs

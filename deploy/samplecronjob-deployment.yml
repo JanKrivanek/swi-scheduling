@@ -5,6 +5,13 @@ metadata:
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
+    metadata:
+      labels:
+        app: schedule-producer
+        app.kubernetes.io/managed-by: kustomize
+        app.kubernetes.io/part-of: slingshot-scheduling-sample
+        app.kubernetes.io/component: producer
+        app.kubernetes.io/name: schedule-producer-sample
     spec:
       parallelism: 1
       template:
