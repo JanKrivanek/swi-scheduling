@@ -7,6 +7,7 @@ resources:
  - ./samplecronjob-deployment.yml
  - ./scheduleconsumer-deployment.yml
  - ./schedulequeue-deployment.yml
+ - ./schedulequeue-service.yml
 
 #patchesStrategicMerge:
 #no patches - just local sample deployment

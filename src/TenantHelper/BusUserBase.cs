@@ -31,6 +31,8 @@ namespace TenantHelper
 
         public void Start()
         {
+            logger.LogInformation("Connecting to queue on {uri}", settings.QueueServiceUri);
+
             var sqs = new Sqs(
                 settings.QueueServiceUri,
                 settings.QueueServiceAccessKey,

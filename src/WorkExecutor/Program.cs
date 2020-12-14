@@ -22,11 +22,15 @@ namespace WorkExecutor
 
             IServiceProvider container = SetupDi();
             var serviceScopeFactory = container.GetRequiredService<IServiceScopeFactory>();
+            CancellationToken ct = CancellationToken.None;
             using (var scope = serviceScopeFactory.CreateScope())
             {
                 var executor = scope.ServiceProvider.GetService<Executor>();
                 executor.Start();
-                Console.ReadKey();
+                
+                //just indefinitely wait - in reality service would wait on exit signal
+                ct.WaitHandle.WaitOne();
+                //Console.ReadKey();
                 executor.Dispose();
             }
         }
